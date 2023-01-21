@@ -1000,26 +1000,40 @@ An extension method is a special type of static method that allows developers to
 
 ## How is the “yield” keyword used? Mention at least one practical scenario where it can be used
 
-The "yield" keyword is used in C# to define iterators, which are methods that return an IEnumerable or IEnumerator object. It is used to implement the IEnumerable interface, which allows an object to be used in a foreach loop. The "yield" keyword is used to return elements of the sequence one at a time, rather than returning the entire sequence at once. This allows the method to be used in a foreach loop without having to load the entire sequence into memory at once.
+The "yield" keyword is used in C# to create an iterator method. Iterator methods are methods that return an IEnumerable, IEnumerator, or `IEnumerable<T>` interface and can be used in a foreach loop.
+
+A practical scenario where the "yield" keyword can be used is when working with large collections of data. Instead of loading all the data into memory at once, an iterator method using the "yield" keyword can return the data one item at a time, reducing the amount of memory used and potentially improving performance. This is known as lazy loading.
 
 ## What’s the difference between camel and pascal casing?
 
-Camel casing is a naming convention in which the first letter of the first word is lowercase, and the first letter of each subsequent word is uppercase. For example, "camelCasing".
-
-Pascal casing is a naming convention in which the first letter of each word is uppercase. For example, "PascalCasing".
+Camel casing refers to the practice of writing compound words or phrases in which the first word is in lower case and the subsequent words are capitalized, for example, "camelCase" or "firstName". Pascal casing refers to the practice of writing compound words or phrases in which the first letter of each word is capitalized, for example, "PascalCase" or "FirstName". The main difference between the two is that camel casing starts with a lowercase letter and pascal casing starts with an uppercase letter.
 
 ## What is reflection?
 
-Reflection is the ability of a program to examine its own structure and behavior at runtime. It allows developers to inspect and modify the attributes and behavior of types, methods, and properties at runtime. It is used to implement features such as dependency injection, serialization, and unit testing.
+Reflection is a feature in many programming languages that allows a program to examine and modify its own structure and behavior at runtime. This includes the ability to inspect and instantiate classes, call methods, access fields and properties, and even modify the code that is currently executing. This can be useful for creating code that is more flexible and adaptable, for creating tools that can work with code written in a variety of languages, and for creating automated testing and debugging tools.
 
-## What are attributes in C#? Give some examples of usage of them
+## What are attributes in C#? Give some examples their usage
 
-Attributes are metadata that can be applied to types, methods, properties, and other elements in C#. They are used to provide additional information about the program to the compiler, and can be used to control the behavior of the program at runtime. For example, the [Serializable] attribute is used to mark a class as serializable, and the [Obsolete] attribute is used to mark a method as obsolete and provide a message to the developer.
+In C#, attributes are a way to add additional metadata to classes, methods, properties, and other elements of the code. They are defined by using the [Attribute] syntax before the element to which they are applied.
 
-## By what mechanism does NUnit know what methods to test?
+Some examples of attributes and their usage include:
 
-NUnit uses reflection to find all the methods in a class that are marked with the [Test] attribute. It then executes each of these methods in turn, and reports the results of each test. This allows developers to write tests without having to modify the test runner. It also allows developers to write tests in a way that is consistent with the original design, and that does not require modification of the original source code. This makes it easier to write and maintain tests. 
+`[Obsolete]`: Indicates that a class, method, or property is deprecated and should no longer be used.
+`[Serializable]`: Indicates that a class can be serialized, allowing it to be converted to and from a binary or other format.
+`[DllImport]`: Allows for the use of a DLL or shared library in the code.
+`[DebuggerDisplay]`: Allows for customizing the string representation of an object when viewed in the debugger.
+`[Conditional]`: Allows for conditional compilation of code based on a specified symbol.
+
+Attributes can also be used to create custom attributes, allowing developers to add their own metadata to their code. These custom attributes can be accessed at runtime using reflection.
+
+## By what mechanism does NUnit know which methods to test?
+
+NUnit uses reflection to find all the methods in a class that are marked with the [Test] attribute. It then executes each of these methods in turn, and reports the results of each test. This allows developers to write tests without having to modify the test runner. It also allows developers to write tests in a way that is consistent with the original design, and that does not require modification of the original source code. This makes it easier to write and maintain tests.
+
+NUnit uses attributes to identify which methods should be tested. The most commonly used attribute is the [Test] attribute, which is applied to a method to indicate that it is a test method. When the test runner executes the tests, it looks for methods with the [Test] attribute and runs them. Other attributes, such as [Setup] and [TearDown], are also used to indicate specific methods that should be run before and after the tests.
 
 ## What is the GAC? What problem does it solve?
 
 The Global Assembly Cache (GAC) is a central repository for assemblies that are shared by multiple applications. It allows developers to share assemblies between applications without having to copy them to each application's directory. This makes it easier to deploy applications, as developers do not have to worry about copying assemblies to each application's directory. It also makes it easier to update assemblies, as developers only need to update the assembly in the GAC, and all applications that use that assembly will automatically use the updated version.
+
+The GAC (Global Assembly Cache) is a machine-wide cache for .NET assemblies that are shared across multiple applications. It is used to store assemblies specifically designated to be shared by several applications on the computer. The GAC solves the problem of having multiple versions of the same assembly installed on a machine, which can cause conflicts and problems with application compatibility. The GAC allows multiple versions of an assembly to be stored on a machine, and each application can specify which version it wants to use, eliminating conflicts and ensuring that the correct version of an assembly is used by each application.
