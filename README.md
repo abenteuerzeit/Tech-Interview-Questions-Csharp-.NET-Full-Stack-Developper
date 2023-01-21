@@ -92,9 +92,9 @@ Click to view the [answers](https://github.com/abenteuerzeit/Tech-Interview-Ques
 8. What is a two-phase commit? Bring an example how to use?
 9. What kind of database relations do you know? How to define them?
 10. What is an ORM? What are the benefits, when to use?
-11. What is the trigger? Bring an example of using?
-12. Indexes at database.
-13. The difference between WHERE and HAVING
+11. What is the trigger? Provide an example of using it
+12. What are indexes in a database?
+13. Explain the difference between WHERE and HAVING.
 14. What is SQL Injection?
 
 ## Networking, HTTP, Web technologies
