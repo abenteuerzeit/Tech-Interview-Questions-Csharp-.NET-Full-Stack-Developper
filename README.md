@@ -100,12 +100,12 @@ Click to view the [answers](https://github.com/abenteuerzeit/Tech-Interview-Ques
 ## Networking, HTTP, Web technologies
 
 1. What is the difference between HTML and XML?
-2. What is a schema in XML? How to validate a schema?
+2. What is a schema in XML? How is a schema validated?
 3. What is XSLT?
-4. When to use AJAX? Bring examples.
+4. When is AJAX used? Provide examples.
 5. What kind of HTTP status codes do you know?
 6. What is a REST API?
-7. What is JSON? When to use?
+7. What is JSON? When is it used?
 
 ## Software Methodologies
 
