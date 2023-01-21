@@ -1000,12 +1000,26 @@ An extension method is a special type of static method that allows developers to
 
 ## How is the “yield” keyword used? Mention at least one practical scenario where it can be used
 
+The "yield" keyword is used in C# to define iterators, which are methods that return an IEnumerable or IEnumerator object. It is used to implement the IEnumerable interface, which allows an object to be used in a foreach loop. The "yield" keyword is used to return elements of the sequence one at a time, rather than returning the entire sequence at once. This allows the method to be used in a foreach loop without having to load the entire sequence into memory at once.
+
 ## What’s the difference between camel and pascal casing?
+
+Camel casing is a naming convention in which the first letter of the first word is lowercase, and the first letter of each subsequent word is uppercase. For example, "camelCasing".
+
+Pascal casing is a naming convention in which the first letter of each word is uppercase. For example, "PascalCasing".
 
 ## What is reflection?
 
+Reflection is the ability of a program to examine its own structure and behavior at runtime. It allows developers to inspect and modify the attributes and behavior of types, methods, and properties at runtime. It is used to implement features such as dependency injection, serialization, and unit testing.
+
 ## What are attributes in C#? Give some examples of usage of them
+
+Attributes are metadata that can be applied to types, methods, properties, and other elements in C#. They are used to provide additional information about the program to the compiler, and can be used to control the behavior of the program at runtime. For example, the [Serializable] attribute is used to mark a class as serializable, and the [Obsolete] attribute is used to mark a method as obsolete and provide a message to the developer.
 
 ## By what mechanism does NUnit know what methods to test?
 
+NUnit uses reflection to find all the methods in a class that are marked with the [Test] attribute. It then executes each of these methods in turn, and reports the results of each test. This allows developers to write tests without having to modify the test runner. It also allows developers to write tests in a way that is consistent with the original design, and that does not require modification of the original source code. This makes it easier to write and maintain tests. 
+
 ## What is the GAC? What problem does it solve?
+
+The Global Assembly Cache (GAC) is a central repository for assemblies that are shared by multiple applications. It allows developers to share assemblies between applications without having to copy them to each application's directory. This makes it easier to deploy applications, as developers do not have to worry about copying assemblies to each application's directory. It also makes it easier to update assemblies, as developers only need to update the assembly in the GAC, and all applications that use that assembly will automatically use the updated version.
