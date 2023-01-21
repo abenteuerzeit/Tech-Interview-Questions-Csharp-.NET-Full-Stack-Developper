@@ -80,4 +80,29 @@ These are some of the typical elements of a UML class diagram, each element has 
 
 ## What kind of design patterns do you know? Provide at least 3 examples
 
+Design patterns are reusable solutions to common problems in software development. They provide a way to structure and organize code, and they help to make software more maintainable and extensible. There are several different types of design patterns, and some of the most commonly used patterns include:
+
+- Singleton: The singleton pattern is used to ensure that a class has only one instance, and that this instance can be accessed globally. This pattern is useful for creating resources that are shared across the system, such as a logging service or a configuration manager.
+- Factory: The factory pattern is used to create objects without specifying the exact class of the object that will be created. This pattern is useful for creating objects that are part of a family of related objects, or for creating objects that may change over time.
+- Observer: The observer pattern is used to establish a one-to-many relationship between objects, so that when one object changes state, all of its dependents are notified. This pattern is useful for creating systems that need to respond to changing conditions, such as a stock ticker or a weather monitoring system.
+- Command: The command pattern encapsulates a request as an object, separating the request from the object that handles it. This pattern is used to create objects that can be stored and executed later, or to create objects that can be passed around and executed in different contexts.
+- Decorator: The decorator pattern allows to attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
+- Adapter: The adapter pattern allows classes with incompatible interfaces to work together by wrapping an instance of one class with an adapter class that conforms to the interface required by the client.
+
+These are a few examples of the many design patterns that are used in software development. Each design pattern has its own strengths and weaknesses, and the choice of pattern depends on the specific problem that needs to be solved.
+
 ## What do you know about the SOLID principles?
+
+SOLID is an acronym for five design principles that were first introduced by Robert C. Martin as a way to improve the design of object-oriented software. The SOLID principles are:
+
+Single Responsibility Principle (SRP): A class should have one, and only one, reason to change. This principle encourages the separation of concerns within the code base so that changes to one part of the system do not affect other parts.
+
+Open/Closed Principle (OCP): A class should be open for extension but closed for modification. This principle encourages the use of interfaces and abstract classes, so that new functionality can be added without modifying existing code.
+
+Liskov Substitution Principle (LSP): Subtypes should be substitutable for their base types. This principle encourages the use of inheritance and polymorphism, so that subtypes can be used in place of their base types without affecting the correctness of the program.
+
+Interface Segregation Principle (ISP): A class should not be forced to implement interfaces it does not use. This principle encourages the use of small, focused interfaces, so that classes only need to implement the functionality that they actually use.
+
+Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules. Both should depend on abstractions. This principle encourages the use of dependency injection, so that high-level modules can be decoupled from low-level modules and are not tightly coupled to specific implementations.
+
+These principles provide a set of guidelines for writing clean, maintainable, and extensible code. By following these principles, developers can create systems that are easy to understand, modify, and test.
