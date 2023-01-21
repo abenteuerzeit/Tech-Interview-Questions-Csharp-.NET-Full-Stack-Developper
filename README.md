@@ -3,6 +3,8 @@
 
 ## OOP / General
 
+Click to view the [answers](https://github.com/abenteuerzeit/Tech-Interview-Questions-Csharp-.NET-Full-Stack-Developper/blob/master/OOP.md#oop)
+
 1. What is OOP?
 
     - Inheritance
