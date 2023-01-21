@@ -6,12 +6,6 @@
 Click to view the [answers](https://github.com/abenteuerzeit/Tech-Interview-Questions-Csharp-.NET-Full-Stack-Developper/blob/master/OOP.md#oop)
 
 1. What is OOP?
-
-    - Inheritance
-    - Polymorphism
-    - Abstraction
-    - Encapsulation
-
 2. What is a class?
 3. What is an object?
 4. What is casting? What is the difference between up vs downcasting?
@@ -38,9 +32,6 @@ Click to view the [answers](https://github.com/abenteuerzeit/Tech-Interview-Ques
 25. What is data hiding?
 26. What is variable shadowing?
 27. What is the difference between hiding a static method and overriding an instance method?
-    - Instance Methods
-    - Static Methods
-    - Differences
 28. Define the following terms: Instantiation, Attribute, Method
 29. Explain how object oriented languages implement abstract data types.
 30. Explain how object oriented languages attempt to simplify memory management for Programmers.
@@ -111,11 +102,9 @@ Click to view the [answers](https://github.com/abenteuerzeit/Tech-Interview-Ques
 
 1. What kind of software-lifecycle models do you know?
 2. What kind of software development methodologies do you know? What are the main features of these?
-    - Waterfall Model
-    - Agile Model
-3. What is a UML diagram? What kind of diagram types do you know? UML has lots of diagram types:
+3. What is a UML diagram? What kind of diagram types do you know?
 4. What is a UML class diagram? What are the typical elements?
-5. What kind of design patterns do you know? Bring at least 3 examples.
+5. What kind of design patterns do you know? Provide at least 3 examples.
 6. What do you know about the SOLID principles?
 
 ## Csharp
