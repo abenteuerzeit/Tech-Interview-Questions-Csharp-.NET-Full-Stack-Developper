@@ -12,19 +12,15 @@ A class is a blueprint or template for creating objects in object-oriented progr
 
 For example, in C#, a class can be defined as follows:
 
-    ```csharp
     class MyClass
     {
         public int myInt;
         public void MyMethod() { /* code */ }
     }
-    ```
 
 This class, named "MyClass", has a public integer property called "myInt" and a public method called "MyMethod". Objects can be created from this class using the "new" keyword, like this:
 
-    ```csharp
     MyClass myObject = new MyClass();
-    ```
 
 And it can be accessed using this object.
 
@@ -32,9 +28,7 @@ And it can be accessed using this object.
 
 An object is an instance of a class in object-oriented programming. It is a concrete representation of the blueprint or template defined by a class. An object is created by using the "new" keyword and a class constructor, like this:
 
-    ```csharp
     MyClass myObject = new MyClass();
-    ```
 
 An object is a combination of data and methods that operate on that data. The data is stored in the object's properties, and the methods define the behavior of the object. Objects can also interact with other objects, sending messages and receiving messages in response.
 
@@ -50,10 +44,8 @@ Downcasting is the process of converting a base class object to a derived class 
 
 For example, in C#,
 
-    ```csharp
     BaseClass b = new DerivedClass(); // upcasting
     DerivedClass d = (DerivedClass) b; // downcasting
-    ```
 
 In the first line, `b` is a `BaseClass` object, and `DerivedClass` is derived from `BaseClass`, so it is a safe upcasting. In the second line, `b` is explicitly converted to `DerivedClass` object, it is a downcasting.
 
@@ -80,7 +72,6 @@ There are two types of polymorphism:
 
 A realistic example of polymorphism can be an application that deals with different types of shapes like a rectangle, circle, and triangle. All of these shapes can have a common method named `draw()` which is overridden in each derived class to provide the specific implementation for each shape.
 
-    ```csharp
     class Shape 
     {
         public virtual void draw() { /* code for drawing the shape */ }
@@ -95,19 +86,16 @@ A realistic example of polymorphism can be an application that deals with differ
     {
         public override void draw() { /* code for drawing a circle */ }
     }
-    ```
 
 In this example, the `draw()` method is defined in the base class `Shape` and overridden in derived classes `Rectangle` and `Circle` to provide specific implementation for each shape.
 
 Now, we can create an array of shape objects and call the `draw()` method on each of them without knowing the actual type of the object.
 
-    ```csharp
     Shape[] shapes = { new Rectangle(), new Circle()};
     foreach (Shape s in shapes)
     {
         s.draw();
     }
-    ```
 
 The `draw()` method will call the appropriate implementation of the method for the actual type of the object, whether it is a rectangle or a circle. This allows the same code to work with different types of objects, which is the essence of polymorphism.
 
@@ -117,7 +105,6 @@ Inheritance is a concept in object-oriented programming that allows one class to
 
 A realistic example of inheritance can be a transportation system like a train or a bus. A base class `Transportation` can have common attributes like number of wheels and speed and common methods like move() and stop(). We can have derived classes like `Train` and `Bus` which can inherit the properties and methods from the base class and can have additional properties and methods specific to them like number of compartments and number of doors.
 
-    ```csharp
     class Transportation
     {
         public int wheels;
@@ -137,7 +124,6 @@ A realistic example of inheritance can be a transportation system like a train o
         public int doors;
         public void pickUpPassenger() { /* code for picking up passenger */ }
     }
-    ```
 
 In this example, the base class `Transportation` has two attributes `wheels` and `speed` and two methods `move()` and `stop()`. The derived classes `Train` and `Bus` inherit these attributes and methods from the base class and have additional attributes and methods specific to them. The derived class can also override the methods of the base class if necessary.
 
@@ -151,22 +137,18 @@ A constructor is defined with the same name as the class and does not have any r
 
 For example,
 
-    ```csharp
     class MyClass
     {
         public int myInt;
         public MyClass() { /* default constructor */ }
         public MyClass(int value) { myInt = value; }
     }
-    ```
 
 In this example, `MyClass` has two constructors. The first one is a default constructor, which takes no arguments and does not initialize the `myInt` property. The second constructor takes an integer argument and sets the value of `myInt` to that value.
 
 Creating an object using a constructor:
 
-    ```csharp
     MyClass myObject = new MyClass(10);
-    ```
 
 This creates an object of `MyClass` and calls the second constructor which initializes the `myInt` to 10.
 
@@ -180,23 +162,19 @@ Method overloading is useful when a class needs to perform similar actions with 
 
 For example,
 
-    ```csharp
     class MyClass
     {
         public void MyMethod() { /* code */ }
         public void MyMethod(int value) { /* code */ }
         public void MyMethod(string text) { /* code */ }
     }
-    ```
 
 In this example, `MyClass` has three methods with the same name "MyMethod", but with different parameters. When the method is called, the compiler determines which version of the method to call based on the arguments passed to the method.
 
-    ```csharp
     MyClass myObject = new MyClass();
     myObject.MyMethod();  // calls the first version of the method
     myObject.MyMethod(10);  // calls the second version of the method
     myObject.MyMethod("text");  // calls the third version of the method
-    ```
 
 It's worth noting that when overloading a method, the return type of the methods is not considered, only the parameter list is taken into account.
 
@@ -206,19 +184,15 @@ When passing arguments to a method in C#, there are two main ways to pass the ar
 
 Pass by value means that a copy of the argument's value is passed to the method. Any changes made to the argument inside the method do not affect the original value of the argument. For example, in the following code snippet, the value of the variable `x` is passed to the method `MyMethod`, but the value of `x` is not changed after the method is called:
 
-    ```csharp
     int x = 10;
     MyMethod(x);
     Console.WriteLine(x); // will output 10
-    ```
 
 Pass by reference means that a reference to the memory location of the argument is passed to the method. Any changes made to the argument inside the method will affect the original value of the argument. For example, in the following code snippet, the reference of the variable `x` is passed to the method `MyMethod`, and the value of `x` is changed after the method is called:
 
-    ```csharp
     int x = 10;
     MyMethod(ref x);
     Console.WriteLine(x); // will output 20
-    ```
 
 In C#, all reference types (classes, strings, arrays, etc) are passed by reference by default. Value types (int, double, etc) are passed by value by default. When passing a value type by reference, you can use the `ref` keyword when calling the method and also when defining the method's parameter, this tells the compiler that the argument should be passed by reference.
 
@@ -232,7 +206,6 @@ Method overriding is achieved by using the `override` keyword in the derived cla
 
 For example,
 
-    ```csharp
     class Shape
     {
         public virtual void Draw() { /* code for drawing the shape */ }
@@ -241,16 +214,13 @@ For example,
     {
         public override void Draw() { /* code for drawing a rectangle */ }
     }
-    ```
 
 In this example, the base class `Shape` has a method `Draw()` which is marked as `virtual`. The derived class `Rectangle` has a method `Draw()` which is marked as `override`.
 
 When a `Rectangle` object is created and `Draw()` method is called on it, the overridden version of the method in the `Rectangle` class is called, which provides the specific implementation for drawing a rectangle.
 
-    ```csharp
     Rectangle rect = new Rectangle();
     rect.Draw(); // calls the Draw() method of the Rectangle class
-    ```
 
 Method overriding allows derived classes to provide a different implementation for a method that is already defined in the base class, this allows for a more flexible and extensible code, and it also enables the creation of a class hierarchy that models real-world objects and their relationships in a more natural and intuitive way.
 
@@ -262,7 +232,6 @@ An interface is defined using the `interface` keyword and can include methods, p
 
 For example,
 
-    ```csharp
     interface IShape
     {
         void Draw();
@@ -271,7 +240,6 @@ For example,
     {
         public void Draw() { /* code for drawing a rectangle */ }
     }
-    ```
 
 In this example, `IShape` is an interface that defines a single method `Draw()`. The `Rectangle` class implements the `IShape` interface by providing an implementation for the `Draw()` method.
 
@@ -285,7 +253,6 @@ The basic syntax of exception handling in C# is the try-catch block. You put the
 
 For example,
 
-    ```csharp
     try
     {
         int result = 5 / 0;
@@ -294,7 +261,6 @@ For example,
     {
         Console.WriteLine("Cannot divide by zero.");
     }
-    ```
 
 In this example, the try block contains the code that might throw an exception, in this case, dividing by zero. The catch block catches the exception of type `DivideByZeroException` and provides a way to handle the exception by displaying an error message.
 
@@ -320,7 +286,6 @@ An abstract class is a class that cannot be instantiated and serves as a base cl
 
 For example,
 
-    ```csharp
     abstract class Shape
     {
         public abstract void Draw();
@@ -329,7 +294,6 @@ For example,
     {
         public override void Draw() { /* code for drawing a rectangle */ }
     }
-    ```
 
 In this example, the base class `Shape` is an abstract class and it has an abstract method `Draw()` which is a method without implementation. The derived class `Rectangle` implements this method by providing the specific implementation for drawing a rectangle.
 
@@ -353,14 +317,12 @@ By default, the access level of class members is private.
 
 For example,
 
-    ```csharp
     class MyClass
     {
         private int myInt;
         public int MyProperty { get; set; }
         protected void MyMethod() { /* code */ }
     }
-    ```
 
 In this example, the `myInt` field is private and can only be accessed within the same class, the `MyProperty` property is public and can be accessed from any part of the code and the `MyMethod` method is protected and can be accessed within the same class and derived classes.
 
@@ -374,10 +336,8 @@ Early binding, also known as static binding or compile-time binding, is the proc
 
 For example,
 
-    ```csharp
     Rectangle rect = new Rectangle();
     rect.Draw();
-    ```
 
 In this example, the `rect` object is of type `Rectangle`, the compiler knows the exact type of the object and can bind the method call `rect.Draw()` to the `Draw()` method of the `Rectangle` class at compile-time.
 
@@ -385,10 +345,8 @@ Late binding, also known as dynamic binding or runtime binding, is the process o
 
 For example,
 
-    ```csharp
     Shape shape = new Rectangle();
     shape.Draw();
-    ```
 
 In this example, the `shape` object is of type `Shape`, the compiler does not know the exact type of the object and must bind the method call `shape.Draw()` to the appropriate method at runtime, in this case the `Draw()` method of the `Rectangle` class.
 
@@ -404,7 +362,6 @@ A default constructor is a constructor that takes no arguments and initializes t
 
 For example,
 
-    ```csharp
     class MyClass
     {
         public MyClass()
@@ -412,13 +369,11 @@ For example,
             // Initialization code
         }
     }
-    ```
 
 In this example, `MyClass` has a default constructor with no parameters.
 
 On the other hand, a constructor with parameters is used to initialize an object with specific values when it is created. For example,
 
-    ```csharp
     class MyClass
     {
         int x, y;
@@ -428,7 +383,6 @@ On the other hand, a constructor with parameters is used to initialize an object
             this.y = y;
         }
     }
-    ```
 
 In this example, `MyClass` has a constructor that takes two integers as parameters, which are used to initialize the `x` and `y` fields of the class.
 
@@ -442,7 +396,6 @@ Copy constructors are useful when you want to create a new object that has the s
 
 For example,
 
-    ```csharp
     class MyClass
     {
         int x, y;
@@ -457,7 +410,6 @@ For example,
             this.y = other.y;
         }
     }
-    ```
 
 In this example, `MyClass` has a constructor that takes two integers as parameters, which are used to initialize the `x` and `y` fields of the class and also has a copy constructor that takes an object of type `MyClass` and it creates a new object with the same values as the original object.
 
@@ -471,7 +423,6 @@ No, static methods cannot use non-static members (fields or properties) directly
 
 However, a static method can use non-static members through an instance of the class or by using a static reference to a non-static member. For example,
 
-    ```csharp
     class MyClass
     {
         public int x;
@@ -481,7 +432,6 @@ However, a static method can use non-static members through an instance of the c
             int y = instance.x;
         }
     }
-    ```
 
 In this example, the static method `MyStaticMethod` creates an instance of `MyClass`, and uses it to access the non-static field `x`.
 
@@ -497,7 +447,6 @@ A subclass is a class that inherits from a base class, it can add new properties
 
 For example,
 
-    ```csharp
     class Shape
     {
         public void Draw() { /* code for drawing a shape */ }
@@ -509,7 +458,6 @@ For example,
         public int Height { get; set; }
         public override void Draw() { /* code for drawing a rectangle */ }
     }
-    ```
 
 In this example, `Shape` is the base class and `Rectangle` is the subclass. The `Rectangle` class inherits from the `Shape` class and it has its own properties `Width` and `Height`, and it overrides the `Draw()` method of the base class to provide its own implementation for drawing a rectangle.
 
@@ -525,10 +473,8 @@ Static binding, also known as compile-time binding or early binding, is the proc
 
 For example,
 
-    ```csharp
     Rectangle rect = new Rectangle();
     rect.Draw();
-    ```
 
 In this example, the `rect` object is of type `Rectangle`, the compiler knows the exact type of the object and can bind the method call `rect.Draw()` to the `Draw()` method of the `Rectangle` class at compile-time.
 
@@ -536,10 +482,8 @@ Dynamic binding, also known as runtime binding or late binding, is the process o
 
 For example,
 
-    ```csharp
     Shape shape = new Rectangle();
     shape.Draw();
-    ```
 
 In this example, the `shape` object is of type `Shape`, the compiler does not know the exact type of the object and must bind the method call `shape.Draw()` to the appropriate method at runtime, in
 
@@ -549,7 +493,6 @@ Inheritance is the OOP concept that is used as a reuse mechanism. It allows you 
 
 For example,
 
-    ```csharp
     class Shape
     {
         public void Draw() { /* code for drawing a shape */ }
@@ -560,7 +503,6 @@ For example,
         public int Width { get; set; }
         public int Height { get; set; }
     }
-    ```
 
 In this example, the class `Rectangle` inherits from the class `Shape`, it inherits the `Draw()` method of the `Shape` class and also has its own properties `Width` and `Height`.
 
@@ -576,14 +518,12 @@ Encapsulation is achieved by using access modifiers, such as `public`, `private`
 
 For example,
 
-    ```csharp
     class MyClass
     {
         private int myInt;
         public int MyProperty { get; set; }
         protected void MyMethod() { /* code */ }
     }
-    ```
 
 In this example, the `myInt` field is private and can only be accessed within the same class, the `MyProperty` property is public and can be accessed from any part of the code and the `MyMethod` method is protected and can be accessed within the same class and derived classes.
 
@@ -599,14 +539,12 @@ Data hiding is achieved by using access modifiers, such as `private`, `protected
 
 For example,
 
-    ```csharp
     class MyClass
     {
         private int myInt;
         public int MyProperty { get; set; }
         protected void MyMethod() { /* code */ }
     }
-    ```
 
 In this example, the `myInt` field is private and can only be accessed within the same class, the `MyProperty` property is public and can be accessed from any part of the code, and the `MyMethod` method is protected and can be accessed within the same class and derived classes.
 
@@ -622,7 +560,6 @@ When a local variable or parameter has the same name as a member variable, the l
 
 For example,
 
-    ```csharp
     class MyClass
     {
         int x;
@@ -632,7 +569,6 @@ For example,
             Console.WriteLine(x); // Outputs 2
         }
     }
-    ```
 
 In this example, the local variable `x` in the `MyMethod` method shadows the member variable `x` in the `MyClass` class. Any reference to the variable `x` within the `MyMethod` method refers to the local variable `x` and not the member variable `x`.
 
@@ -642,7 +578,6 @@ In C#, you can use the `new` keyword to indicate that you want to shadow a varia
 
 For example,
 
-    ```csharp
     class MyBaseClass
     {
         public int x;
@@ -652,7 +587,6 @@ For example,
     {
         new public int x;
     }
-    ```
 
 In this example, the `MyDerivedClass` shadows the `x` variable from the `MyBaseClass`.
 
@@ -664,7 +598,6 @@ When you hide a static method, you create a new method in a derived class with t
 
 For example,
 
-    ```csharp
     class MyBaseClass
     {
         public static void MyStaticMethod() { /* code */ }
@@ -674,13 +607,11 @@ For example,
     {
         new public static void MyStaticMethod() { /* new code */ }
     }
-    ```
 
 When you override an instance method, you create a new method in a derived class with the same name and signature as an instance method in the base class, but with the `override` keyword. When you call the method on an instance of the derived class, the new method in the derived class will be called, not the method in the base class. Overriding an instance method allows you to provide a new implementation of a method in a derived class, while still preserving the original method in the base class.
 
 For example,
 
-    ```csharp
     class MyBaseClass
     {
         public virtual void MyMethod() { /* code */ }
@@ -690,7 +621,6 @@ For example,
     {
         public override void MyMethod() { /* new code */ }
     }
-    ```
 
 The main difference between hiding a static method and overriding an instance method is the scope of the methods. Static methods belong to the class and can be called without creating an instance of the class. Instance methods belong to an object and can be called on an instance of the class. Hiding a static method allows you to provide a new implementation of a method that belongs to the class and can be called without creating an instance of the class. Overriding an instance method allows you to provide a new implementation of a method that belongs to an object and can be called on an instance of the class.
 
@@ -702,14 +632,12 @@ The main difference between hiding a static method and overriding an instance me
 
 For example,
 
-    ```csharp
     class MyClass
     {
         int x;
         public int MyProperty { get; set; }
         public void MyMethod(int y) { x = x + y;}
     }
-    ```
 
 In this example, `MyClass` has one attribute `x`, one property `MyProperty` and one method `MyMethod`. To create an instance of MyClass we use the new keyword: `MyClass myObject = new MyClass();` This is the instantiation process. Now the object `myObject` has access to the attribute `x`, property `MyProperty` and method `MyMethod`.
 
@@ -721,7 +649,6 @@ Object-oriented languages, such as C# and Java, implement ADTs by using classes.
 
 For example, a stack is an ADT that can be implemented as a class in C#:
 
-    ```csharp
     class Stack
     {
         private List<int> _items;
@@ -730,7 +657,6 @@ For example, a stack is an ADT that can be implemented as a class in C#:
         public int Peek() { /* code for looking at the top item on the stack */ }
         public bool IsEmpty() { /* code for checking if the stack is empty */ }
     }
-    ```
 
 In this example, the class `Stack` defines the behavior of a stack ADT by providing methods for pushing, popping and peeking items, as well as checking if the stack is empty. However, it doesn't specify how these methods are implemented, for example, it doesn't specify that the stack is implemented using a List.
 
@@ -748,10 +674,8 @@ In contrast, object-oriented languages with garbage collection automatically tra
 
 For example, in C#, when an object is no longer being referenced by any variable, it becomes eligible for garbage collection, and the garbage collector will automatically free up the memory occupied by that object.
 
-    ```csharp
     MyClass myObject = new MyClass();
     myObject = null; // myObject is eligible for garbage collection
-    ```
 
 This way, the programmer can focus on the logic of the program, without worrying about the details of memory management, and leaving it to the garbage collector to manage the memory.
 
@@ -781,7 +705,6 @@ For example, consider a class named `Car` that represents a car. The class might
 
 Here is an example of a simple class in C#:
 
-    ```csharp
     class Car
     {
         public string make;
@@ -793,25 +716,20 @@ Here is an example of a simple class in C#:
         public void Drive() { /* code to drive the car */ }
         public void Stop() { /* code to stop the car */ }
     }
-    ```
 
 In this example, the `Car` class has properties for `make`, `model`, `year`, and `color`, and methods for `Start()`, `Drive()`, and `Stop()`. To create an object of the class, you would use the `new` keyword to instantiate it, like so:
 
-    ```csharp
     Car myCar = new Car();
     myCar.make = "Toyota";
     myCar.model = "Camry";
     myCar.year = 2020;
     myCar.color = "Blue";
-    ```
 
 This creates an object of the `Car` class, and assigns values to the properties of the object. The object can then execute the methods of the class, like so:
 
-    ```csharp
     myCar.Start();
     myCar.Drive();
     myCar.Stop();
-    ```
 
 In this example, the `Car` class represents an object-oriented program, it defines the properties and methods of the object, and the object represents an instance of the class, with its own unique values for the properties, and it can execute the methods.
 
@@ -821,7 +739,6 @@ I can describe the relationships between entities in an object-oriented family i
 
 A family can be modeled as an object-oriented program using classes and objects. Here's an example of how a family can be represented:
 
-    ```csharp
     class Person 
     {
         string name;
@@ -833,7 +750,6 @@ A family can be modeled as an object-oriented program using classes and objects.
         public void Greet() { /* code to greet */ }
         public void AddChild(Person child) { /* code to add a child */ }
     }
-    ```
 
 In this example, the `Person` class represents a person in the family. It has properties such as `name`, `age`, and `gender`, and it has a reference to the person's mother and father, and a list of children. The class also has a method `Greet()` and `AddChild()` which can be used to greet and add a child respectively.
 
@@ -841,7 +757,7 @@ Each person in the family is an instance of the `Person` class. The `mother`, `f
 
 It can be represented as a tree-like structure where each node is a person, and each person has a reference to their parents and children, like so:
 
-    ```text
+    text
     +-----------------+
     |                 |
     |      John       |
@@ -855,7 +771,6 @@ It can be represented as a tree-like structure where each node is a person, and 
 |      Mary       |   |      Peter      |
 |                 |   |                 |
 +-----------------+   +-----------------+
-    ```
 
 It's worth noting that this is just one way to model a family using object-oriented programming, and different models can be used depending on the specific requirements of the program.
 
@@ -867,7 +782,6 @@ An immutable object has properties that are read-only, meaning that they can be 
 
 For example, consider a class `Person` that has properties such as `name`, `age`, and `gender`, and a method `ChangeName()`. If the `Person` class is immutable, the `ChangeName()` method would not directly change the `name` property of the `Person` object, but it would return a new `Person` object with the updated name.
 
-    ```csharp
     class Person
     {
         public string name { get; }
@@ -885,7 +799,6 @@ For example, consider a class `Person` that has properties such as `name`, `age`
             return new Person(newName, age, gender);
         }
     }
-    ```
 
 In this example, the `Person` class is immutable, the properties `name`, `age`, and `gender` are read-only. The `ChangeName()` method returns a new `Person` object with the updated name, but the original object is not modified.
 
@@ -904,7 +817,6 @@ To make a class immutable, you need to follow these steps:
 
 Here is an example of an immutable `Person` class:
 
-    ```csharp
     class Person
     {
         private readonly string name;
@@ -927,7 +839,6 @@ Here is an example of an immutable `Person` class:
             return new Person(newName, age, gender);
         }
     }
-    ```
 
 In this example, the class `Person` has read-only properties `Name`, `Age`, and `Gender` and it can only be initialized by the constructor that takes in the name, age, and gender. The class also has a method `ChangeName()` that returns a new `Person` object with the updated name, but the original object is not modified.
 
@@ -947,30 +858,22 @@ There are a few ways to prevent developers from subclassing a class:
 
 1. Use the `sealed` keyword: In C#, you can use the `sealed` keyword to prevent a class from being subclassed. A sealed class cannot be inherited by another class.
 
-        ```csharp
         sealed class MyClass { /* class code here */ }
-        ```
 
 2. Make the class `static`: In C#, you can make a class `static` to prevent it from being subclassed. A static class cannot be instantiated, and therefore cannot be inherited by another class.
 
-        ```csharp
         static class MyClass { /* class code here */ }
-        ```
 
 3. Make the constructor private: In C#, you can make the constructor of a class private to prevent it from being subclassed. This means that the class cannot be instantiated, and therefore cannot be inherited by another class.
 
-        ```csharp
         class MyClass
         {
             private MyClass() { /* constructor code here */ }
         }
-        ```
 
 4. Use an interface instead of a class: If you want to define a set of methods and properties that a class must implement, you can use an interface instead of a class. Interfaces cannot be instantiated and therefore cannot be subclassed.
 
-        ```csharp
         interface IMyInterface { /* interface code here */ }
-        ```
 
 It's worth noting that while these techniques can prevent a class from being subclassed, they also make it harder to reuse the code, and you should be careful when using them. It's important to consider the design trade-offs and the specific requirements of the program before deciding whether or not to prevent a class from being subclassed.
 
@@ -980,38 +883,30 @@ There are a few ways to prevent developers from overriding a method in a subclas
 
 1. Use the `sealed` keyword: In C#, you can use the `sealed` keyword to prevent a method from being overridden in a subclass. A sealed method cannot be overridden by a subclass.
 
-        ```csharp
         class MyClass 
         {
             public sealed void MyMethod() { /* method code here */ }
         }
-        ```
 
 2. Make the method `private` or `internal`: Making a method `private` or `internal` means that it is not accessible to subclasses. So, a subclass cannot override the method
 
-        ```csharp
         class MyClass 
         {
             private void MyMethod() { /* method code here */ }
         }
-        ```
 
 3. Make the method `final`: In some languages like Java, making a method `final` prevents it from being overridden.
 
-        ```csharp
         class MyClass 
         {
             public final void MyMethod() { /* method code here */ }
         }
-        ```
 
 4. Make the class `final`: Similar to making a method `final`, in some languages like Java, making a class `final` prevents any of its methods from being overridden by a subclass.
 
-        ```csharp
         final class MyClass {
             public void MyMethod() { /* method code here */ }
         }
-        ```
 
 It's worth noting that while these techniques can prevent a method from being overridden, it also makes it harder to reuse the code, and you should be careful when using them. It's important to consider the design trade-offs and the specific requirements of the program before deciding whether or not to prevent a method from being overridden.
 
@@ -1021,30 +916,24 @@ There are a few ways to prevent developers from changing the value of a variable
 
 1. Use the `readonly` keyword: In C#, you can use the `readonly` keyword to prevent a variable from being modified after it is initialized.
 
-        ```csharp
         class MyClass 
         {
             public readonly int MyVariable = 5;
         }
-        ```
 
 2. Make the variable `private`: Making a variable `private` means that it is not accessible to external classes, so it cannot be modified by them.
 
-        ```csharp
         class MyClass {
             private int MyVariable = 5;
         }
-        ```
 
 3. Use a property with a private setter: You can use a property to provide read-only access to a variable. By making the setter of the property private, it can only be set by the class where it is defined, and it cannot be modified by external classes.
 
-        ```csharp
         class MyClass 
         {
             public int MyVariable { get; private set; }
             public MyClass() { MyVariable = 5; }
         }
-        ```
 
 4. Use Immutable objects: You can use immutable objects, which cannot be modified after they are created, and all their properties are read-only.
 
