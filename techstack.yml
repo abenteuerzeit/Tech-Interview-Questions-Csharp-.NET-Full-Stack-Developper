@@ -1,7 +1,8 @@
 repo_name: abenteuerzeit/Tech-Interview-Questions-Csharp-.NET-Full-Stack-Developper
 report_id: 78cb5895a41a5027895bf4dabea3d3de
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-12T10:26:15+00:00'
+timestamp: '2024-01-05T08:49:20+00:00'
 requested_by: abenteuerzeit
 provider: github
 branch: master
@@ -15,4 +16,5 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/abenteuerzeit/Tech-Interview-Questions-Csharp-.NET-Full-Stack-Developper
   detection_source: Repo Metadata
